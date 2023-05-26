@@ -1,5 +1,5 @@
 import Banner from "./../../components/Banner";
-import Card from "./../../components/Card";
+import Gallery from "./../../components/Gallery";
 import "./../../utils/style/style.scss";
 
 function Home() {
@@ -7,7 +7,7 @@ function Home() {
     <div>
       <Banner bannerText="Chez vous, partout et ailleurs" />
       <div className="gallery">
-        <Card />
+        <Gallery />
       </div>
     </div>
   );

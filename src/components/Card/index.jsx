@@ -1,7 +1,9 @@
-function Card() {
+function Card({ id, title, cover }) {
   return (
-    <div>
+    <div className="card">
       <h1>Fiche Logement</h1>
+      <img src={cover} className="picture" alt={`${title} cover`} />
+      {title}
     </div>
   );
 }
