@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./../../logo.svg";
+import "./../../App.css";
+import { Link } from "react-router-dom";
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
+        <Link to={"/fiche-logement"}>Fiche logement</Link>
+        <Link to={"/about"}>A Propos</Link>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -22,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
