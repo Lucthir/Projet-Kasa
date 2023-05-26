@@ -1,4 +1,5 @@
 $primary-color: #ff6060;
+$secondary-color: #f6f6f6;
 $basic-font: "Montserrat", sans-serif;
 
 .nav {
@@ -56,5 +57,47 @@ $basic-font: "Montserrat", sans-serif;
     border-radius: 25px;
     z-index: 1;
     position: absolute;
+  }
+}
+.gallery {
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  padding-top: 30px;
+  background-color: $secondary-color;
+  border-radius: 25px;
+
+  .inner-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 340px;
+    height: 340px;
+    position: relative;
+    margin: 25px;
+    display: flex;
+    border-radius: 10px;
+
+    .card-title {
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: 0%;
+      left: 5%;
+      color: white;
+      font-size: 18px;
+      font-weight: 900;
+      font-family: $basic-font;
+    }
+    img {
+      object-fit: cover;
+      overflow: auto;
+      border-radius: 10px;
+    }
   }
 }
