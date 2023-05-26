@@ -1,7 +1,6 @@
 import Banner from "./../../components/Banner";
 import Gallery from "./../../components/Gallery";
 import background_home from "./../../assets/background_home.png";
-import "./../../utils/style/style.scss";
 
 function Home() {
   return (
