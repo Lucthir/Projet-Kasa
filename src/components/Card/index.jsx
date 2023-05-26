@@ -1,4 +1,4 @@
-function FicheLogement() {
+function Card() {
   return (
     <div>
       <h1>Fiche Logement</h1>
@@ -6,4 +6,4 @@ function FicheLogement() {
   );
 }
 
-export default FicheLogement;
+export default Card;

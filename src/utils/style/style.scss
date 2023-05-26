@@ -1,0 +1,60 @@
+$primary-color: #ff6060;
+$basic-font: "Montserrat", sans-serif;
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  #logo {
+    width: 15%;
+  }
+  .link {
+    font-family: $basic-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142.6%;
+    color: $primary-color;
+    text-decoration: none;
+    margin-right: 25px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    left: 70%;
+  }
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  height: 225px;
+  position: relative;
+  margin-top: 20px;
+  img {
+    width: 85%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+  .filter {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 48px;
+    width: 85%;
+    height: 225px;
+    border-radius: 25px;
+    z-index: 1;
+    position: absolute;
+  }
+}

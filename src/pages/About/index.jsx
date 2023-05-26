@@ -1,7 +1,9 @@
+import Banner from "./../../components/Banner";
+
 function About() {
   return (
     <div>
-      <h1>A Propos</h1>
+      <Banner />
       <h2>Fiabilité</h2>
       <p>
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les
