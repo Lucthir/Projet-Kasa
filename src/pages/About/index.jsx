@@ -1,9 +1,10 @@
 import Banner from "./../../components/Banner";
+import background_about from "./../../assets/background_about.png";
 
 function About() {
   return (
     <div>
-      <Banner />
+      <Banner background={background_about} />
       <h2>Fiabilité</h2>
       <p>
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les

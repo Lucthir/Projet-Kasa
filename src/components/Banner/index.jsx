@@ -1,9 +1,7 @@
-import background_about from "./../../assets/background_about.png";
-
-function Banner({ bannerText }) {
+function Banner({ bannerText, background }) {
   return (
     <div className="banner">
-      <img src={background_about} alt="montagnes et riviere"></img>
+      <img src={background} alt="montagnes et riviere"></img>
       <div className="filter">{bannerText}</div>
     </div>
   );
