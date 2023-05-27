@@ -61,8 +61,8 @@ $basic-font: "Montserrat", sans-serif;
 }
 .gallery {
   display: flex;
-  width: 80%;
-  margin-left: 10%;
+  width: 85%;
+  margin-left: 7.5%;
   margin-top: 50px;
   padding-top: 30px;
   background-color: $secondary-color;
@@ -76,10 +76,10 @@ $basic-font: "Montserrat", sans-serif;
   }
 
   .card {
-    width: 340px;
-    height: 340px;
+    width: 25%;
+    height: 15%;
     position: relative;
-    margin: 25px;
+    margin: 35px;
     display: flex;
     border-radius: 10px;
 
@@ -91,13 +91,80 @@ $basic-font: "Montserrat", sans-serif;
       left: 5%;
       color: white;
       font-size: 18px;
-      font-weight: 900;
+      font-weight: 500;
       font-family: $basic-font;
     }
     img {
       object-fit: cover;
-      overflow: auto;
+      overflow: hidden;
       border-radius: 10px;
     }
+  }
+}
+
+.collapser {
+  width: 50%;
+  margin-left: 25%;
+
+  .collaps-button {
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 47px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 25px;
+    border: none;
+
+    .title {
+      color: white;
+      font-family: $basic-font;
+      font-size: 24px;
+      font-weight: 500;
+      margin-left: 15px;
+    }
+    .arrow {
+      border: none;
+      background-color: $primary-color;
+      margin-right: 15px;
+    }
+  }
+
+  .text {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-family: $basic-font;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .number {
+    font-size: 288px;
+    font-family: $basic-font;
+    font-weight: 700;
+    color: $primary-color;
+    margin: 10px;
+  }
+  .text {
+    color: $primary-color;
+    font-family: $basic-font;
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  .error-link {
+    color: $primary-color;
+    font-family: $basic-font;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 150px;
   }
 }
