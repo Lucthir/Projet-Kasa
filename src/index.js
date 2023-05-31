@@ -6,6 +6,7 @@ import Card from "./components/Card";
 import About from "./pages/About";
 import Error from "./components/Error";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -21,6 +22,7 @@ root.render(
         <Route path="/fiche-logement" element={<Card />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>
 );
