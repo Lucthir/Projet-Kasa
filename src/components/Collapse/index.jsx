@@ -4,7 +4,7 @@ import arrow_down from "./../../assets/arrow_down.svg";
 import arrow_up from "./../../assets/arrow_up.svg";
 
 function Collapse({ title, text }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return isOpen ? (
     <div className="collapser">
       <button className="collaps-button" onClick={() => setIsOpen(false)}>

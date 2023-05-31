@@ -84,6 +84,10 @@ $basic-font: "Montserrat", sans-serif;
     display: flex;
     border-radius: 10px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     .card-title {
       display: flex;
       flex-wrap: wrap;
@@ -101,6 +105,11 @@ $basic-font: "Montserrat", sans-serif;
       border-radius: 10px;
     }
   }
+}
+
+.logement {
+  width: 100%;
+  background-color: #ff6060;
 }
 
 .collapser {
@@ -179,6 +188,7 @@ $basic-font: "Montserrat", sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
   #logo {
     width: 122px;
     margin-top: 25px;
