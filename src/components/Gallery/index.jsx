@@ -1,11 +1,6 @@
 import Card from "./../../components/Card";
 
-function Gallery({
-  isLogement,
-  setIsLogement,
-  selectedLogement,
-  setSelectedLogement,
-}) {
+function Gallery({ selectedId, setSelectedId }) {
   let locationList = require("./../../datas/data.json");
 
   return (
@@ -16,10 +11,8 @@ function Gallery({
           title={title}
           cover={cover}
           key={`${id}`}
-          isLogement={isLogement}
-          setIsLogement={setIsLogement}
-          selectedLogement={selectedLogement}
-          setSelectedLogement={setSelectedLogement}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
         />
       ))}
     </div>

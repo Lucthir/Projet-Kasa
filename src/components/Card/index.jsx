@@ -1,24 +1,33 @@
-function Card({
-  id,
-  title,
-  cover,
-  isLogement,
-  setIsLogement,
-  selectedLogement,
-  setSelectedLogement,
-}) {
+import { generatePath, useNavigate } from "react-router-dom";
+
+function Card({ id, title, cover, selectedId, setSelectedId }) {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    generatePath("/logement/:id/", {
+      id: { id },
+    });
+    sessionStorage.setItem(`path${id}`, `/logement/${id}`);
+    setSelectedId(id);
+  }
+
   return (
     <div
       className="card"
       onClick={() => {
-        setIsLogement(true);
-        setSelectedLogement(id);
+        handleClick();
+        navigate(`/logement/${id}`);
       }}
     >
-      <img src={cover} className="picture" alt={`${title} cover`} />
+      <img src={cover} className="picture" alt={`${title} cover`}></img>
       <h3 className="card-title">{title}</h3>
     </div>
   );
 }
 
 export default Card;
+
+// onClick={() => {
+//   setIsLogement(true);
+//   setSelectedLogement(id);
+// }}
