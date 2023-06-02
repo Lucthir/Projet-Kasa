@@ -109,31 +109,38 @@ $basic-font: "Montserrat", sans-serif;
 
 .logement {
   border: #ff6060 solid 1px;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
   // justify-content: center;
   // align-items: center;
+  .lgmt-carrousel {
+    width: 100%;
+    height: 100%;
+  }
   .carrousel {
     border: #000000 solid 1px;
-    margin-left: 10%;
-    width: 80%;
+
+    width: 100%;
     height: 415px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
-    object-fit: contain;
     border-radius: 25px;
 
     .carrouselpic {
-      object-fit: contain; //WHY does not work ?
+      object-fit: cover;
+      //WHY does not work ?
       z-index: 1;
-    }
-
-    img {
-      opacity: 0.3;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .carrousel-nav {
@@ -157,11 +164,86 @@ $basic-font: "Montserrat", sans-serif;
       z-index: 2;
     }
   }
+
+  .lgmt-description {
+    // display: flex;
+    // flex-direction: row;
+    .lgmt-title {
+      color: $primary-color;
+      font-family: $basic-font;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .lgmt-location {
+      color: $primary-color;
+      font-family: $basic-font;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .lgmt-tags {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+      .tag {
+        color: white;
+        background-color: $primary-color;
+        font-family: $basic-font;
+        font-size: 14px;
+        font-weight: 500;
+        width: fit-content;
+        margin: 10px;
+        padding: 3px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 10px;
+      }
+    }
+    .lgmt-host {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      position: absolute;
+      bottom: 200px;
+      right: 200px;
+      max-width: 150px;
+      .host-name {
+        font-family: $basic-font;
+        font-size: 18px;
+        color: $primary-color;
+        font-weight: 500;
+        flex-wrap: wrap;
+        // margin-right: 10px;
+      }
+      .host-pic {
+        width: 50%;
+        border-radius: 50%;
+      }
+    }
+    .lgmt-rating {
+      display: flex;
+      justify-content: end;
+      .star {
+        margin: 5px;
+      }
+    }
+    .lgmt-collapsers {
+      display: flex;
+
+      .lgmt-collapser {
+        width: 100%;
+      }
+    }
+    .equipment {
+      list-style-type: none;
+      margin: 10px;
+    }
+  }
 }
 
 .collapser {
-  width: 50%;
-  margin-left: 25%;
+  // width: 50%;
+  // margin-left: 25%;
 
   .collaps-button {
     background-color: $primary-color;
@@ -185,7 +267,7 @@ $basic-font: "Montserrat", sans-serif;
       border: none;
       background-color: $primary-color;
       margin-right: 15px;
-      transform: rotate(45deg);
+      // transform: rotate(45deg);
     }
   }
 
