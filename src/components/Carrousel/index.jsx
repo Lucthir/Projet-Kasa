@@ -32,14 +32,16 @@ function Carrousel({ pictures, id }) {
 
       {pictures.map((picture, picindex) => {
         return (
-          <div className="carrouselpic" key={`${id}  ${picindex}`}>
-            {picindex === index && (
-              <img
-                src={picture}
-                alt={`photographie ${picindex + 1} du logement`}
-              />
-            )}
-          </div>
+          // <div className="carrouselpic" >
+          picindex === index && (
+            <img
+              className="carrouselpic"
+              src={picture}
+              alt={`photographie ${picindex + 1} du logement`}
+              key={`${id}  ${picindex}`}
+            />
+          )
+          // </div>
         );
       })}
     </div>

@@ -37,26 +37,28 @@ function Logement({
         <Carrousel pictures={pictures} id={id} />
       </div>
       <div className="lgmt-description">
-        <h3 className="lgmt-title">{title}</h3>
+        <div className="title-host">
+          <h3 className="lgmt-title">{title}</h3>
+          <div className="lgmt-host">
+            <span className="host-name">{host.name}</span>
+            <img src={host.picture} alt="host-pic" className="host-pic"></img>
+          </div>
+        </div>
         <div className="lgmt-location">{location}</div>
+        <div className="tags-stars">
+          <div className="lgmt-tags">
+            {tags.map((content, index) => {
+              return (
+                <p className="tag" key={`tag ${index}`}>
+                  {content}
+                </p>
+              );
+            })}
+          </div>
 
-        <div className="lgmt-tags">
-          {tags.map((content, index) => {
-            return (
-              <p className="tag" key={`tag ${index}`}>
-                {content}
-              </p>
-            );
-          })}
-        </div>
-
-        <div className="lgmt-host">
-          <span className="host-name">{host.name}</span>
-          <img src={host.picture} alt="host-pic" className="host-pic"></img>
-        </div>
-
-        <div className="lgmt-rating">
-          <Stars />
+          <div className="lgmt-rating">
+            <Stars />
+          </div>
         </div>
         <div className="lgmt-collapsers">
           <div className="lgmt-collapser">
@@ -64,7 +66,7 @@ function Logement({
               title="Description"
               text={description}
               width="95%"
-              margin_left="2%"
+              margin_left="0%"
             />
           </div>
           <div className="lgmt-collapser">
@@ -78,7 +80,7 @@ function Logement({
                 );
               })}
               width="95%"
-              margin_left="2%"
+              margin_left="5%"
             />
           </div>
         </div>

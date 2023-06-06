@@ -34,6 +34,8 @@ $basic-font: "Montserrat", sans-serif;
   }
 }
 
+//COMPOSANT BANNER
+
 .banner {
   display: flex;
   justify-content: center;
@@ -59,26 +61,33 @@ $basic-font: "Montserrat", sans-serif;
     position: absolute;
   }
 }
+
+//COMPOSANT GALLERY
+
 .gallery {
   display: flex;
   width: 85%;
+  height: fit-content;
   margin-left: 7.5%;
   margin-top: 50px;
   padding-top: 30px;
   background-color: $secondary-color;
   border-radius: 25px;
-  overflow: hidden;
+  // overflow: hidden;
 
   .inner-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
   }
 
   .card {
-    width: 25%;
-    height: 15%;
+    width: 340px;
+    height: 340px;
     position: relative;
     margin: 35px;
     display: flex;
@@ -107,8 +116,10 @@ $basic-font: "Montserrat", sans-serif;
   }
 }
 
+//PAGE LOGEMENT
+
 .logement {
-  border: #ff6060 solid 1px;
+  // border: #ff6060 solid 1px;
   width: 80%;
   margin-left: 10%;
   display: flex;
@@ -116,13 +127,9 @@ $basic-font: "Montserrat", sans-serif;
   margin-top: 50px;
   // justify-content: center;
   // align-items: center;
-  .lgmt-carrousel {
-    width: 100%;
-    height: 100%;
-  }
-  .carrousel {
-    border: #000000 solid 1px;
 
+  //PARTIE CARROUSEL
+  .carrousel {
     width: 100%;
     height: 415px;
     display: flex;
@@ -133,14 +140,10 @@ $basic-font: "Montserrat", sans-serif;
     border-radius: 25px;
 
     .carrouselpic {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      //WHY does not work ?
       z-index: 1;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     .carrousel-nav {
@@ -150,83 +153,99 @@ $basic-font: "Montserrat", sans-serif;
       z-index: 2;
     }
     #prev {
-      left: 15%;
-      border: #000000 solid 1px;
+      top: 40%;
+      left: 5%;
     }
     #next {
-      right: 15%;
-      border: #000000 solid 1px;
+      top: 40%;
+      right: 5%;
     }
     #num {
       position: absolute;
-      bottom: 15%;
-      color: $primary-color;
+      bottom: 5%;
+      left: 50%;
+      color: white;
       z-index: 2;
     }
   }
 
+  //PARTIE DESCRIPTION
+
   .lgmt-description {
-    // display: flex;
-    // flex-direction: row;
-    .lgmt-title {
-      color: $primary-color;
-      font-family: $basic-font;
-      font-size: 36px;
-      font-weight: 500;
+    .title-host {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .lgmt-title {
+        color: $primary-color;
+        font-family: $basic-font;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .lgmt-host {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        max-width: 150px;
+        .host-name {
+          font-family: $basic-font;
+          font-size: 18px;
+          color: $primary-color;
+          font-weight: 500;
+          flex-wrap: wrap;
+        }
+        .host-pic {
+          width: 50%;
+          border-radius: 50%;
+        }
+      }
     }
+
     .lgmt-location {
       color: $primary-color;
       font-family: $basic-font;
       font-size: 18px;
       font-weight: 500;
+      position: relative;
+      bottom: 30px;
     }
-    .lgmt-tags {
+
+    .tags-stars {
       display: flex;
       flex-direction: row;
-      margin-top: 15px;
-      .tag {
-        color: white;
-        background-color: $primary-color;
-        font-family: $basic-font;
-        font-size: 14px;
-        font-weight: 500;
-        width: fit-content;
-        margin: 10px;
-        padding: 3px;
-        padding-left: 25px;
-        padding-right: 25px;
-        border-radius: 10px;
-      }
-    }
-    .lgmt-host {
-      display: flex;
-      justify-content: end;
-      align-items: center;
+      justify-content: space-between;
+      margin-top: -30px;
 
-      position: absolute;
-      bottom: 200px;
-      right: 200px;
-      max-width: 150px;
-      .host-name {
-        font-family: $basic-font;
-        font-size: 18px;
-        color: $primary-color;
-        font-weight: 500;
-        flex-wrap: wrap;
-        // margin-right: 10px;
+      .lgmt-tags {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-left: -15px;
+        .tag {
+          color: white;
+          background-color: $primary-color;
+          font-family: $basic-font;
+          font-size: 14px;
+          font-weight: 500;
+          width: fit-content;
+          margin: 10px;
+          padding: 3px;
+          padding-left: 25px;
+          padding-right: 25px;
+          border-radius: 10px;
+        }
       }
-      .host-pic {
-        width: 50%;
-        border-radius: 50%;
+
+      .lgmt-rating {
+        display: flex;
+        .star {
+          margin: 5px;
+        }
       }
     }
-    .lgmt-rating {
-      display: flex;
-      justify-content: end;
-      .star {
-        margin: 5px;
-      }
-    }
+
     .lgmt-collapsers {
       display: flex;
 
@@ -234,12 +253,15 @@ $basic-font: "Montserrat", sans-serif;
         width: 100%;
       }
     }
+
     .equipment {
       list-style-type: none;
       margin: 10px;
     }
   }
 }
+
+//COMPOSANT COLLAPSER
 
 .collapser {
   // width: 50%;
@@ -281,6 +303,8 @@ $basic-font: "Montserrat", sans-serif;
   }
 }
 
+//PAGE ERROR 404
+
 .error {
   display: flex;
   flex-direction: column;
@@ -309,6 +333,8 @@ $basic-font: "Montserrat", sans-serif;
   }
 }
 
+//COMPOSANT FOOTER
+
 .footer {
   background-color: black;
   color: white;
@@ -329,4 +355,7 @@ $basic-font: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 24px;
   }
+}
+
+@media (max-width: 650px) {
 }

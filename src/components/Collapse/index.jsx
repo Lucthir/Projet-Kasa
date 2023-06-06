@@ -12,7 +12,7 @@ function Collapse({ title, text, width, margin_left }) {
     >
       <button className="collaps-button" onClick={() => setIsOpen(false)}>
         <h3 className="title">{title}</h3>
-        <img src={arrow_up} alt="bouton fermer" className="arrow" />
+        <img src={arrow_down} alt="bouton fermer" className="arrow" />
       </button>
 
       <div className="text">{text}</div>
@@ -24,7 +24,7 @@ function Collapse({ title, text, width, margin_left }) {
     >
       <button className="collaps-button" onClick={() => setIsOpen(true)}>
         <h3 className="title">{title}</h3>
-        <img src={arrow_down} alt="bouton ouvrir" className="arrow" />
+        <img src={arrow_up} alt="bouton ouvrir" className="arrow" />
       </button>
     </div>
   );
