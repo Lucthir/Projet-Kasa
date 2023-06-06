@@ -37,13 +37,13 @@ function Logement({
         <Carrousel pictures={pictures} id={id} />
       </div>
       <div className="lgmt-description">
-        <div className="title-host">
-          <h3 className="lgmt-title">{title}</h3>
-          <div className="lgmt-host">
-            <span className="host-name">{host.name}</span>
-            <img src={host.picture} alt="host-pic" className="host-pic"></img>
-          </div>
+        {/* <div className="title-host"> */}
+        <h3 className="lgmt-title">{title}</h3>
+        <div className="lgmt-host">
+          <span className="host-name">{host.name}</span>
+          <img src={host.picture} alt="host-pic" className="host-pic"></img>
         </div>
+        {/* </div> */}
         <div className="lgmt-location">{location}</div>
         <div className="tags-stars">
           <div className="lgmt-tags">
@@ -62,12 +62,7 @@ function Logement({
         </div>
         <div className="lgmt-collapsers">
           <div className="lgmt-collapser">
-            <Collapse
-              title="Description"
-              text={description}
-              width="95%"
-              margin_left="0%"
-            />
+            <Collapse title="Description" text={description} />
           </div>
           <div className="lgmt-collapser">
             <Collapse
@@ -79,8 +74,6 @@ function Logement({
                   </ul>
                 );
               })}
-              width="95%"
-              margin_left="5%"
             />
           </div>
         </div>

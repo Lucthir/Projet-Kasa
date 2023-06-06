@@ -2,12 +2,18 @@ $primary-color: #ff6060;
 $secondary-color: #f6f6f6;
 $basic-font: "Montserrat", sans-serif;
 
-.nav {
+// body {
+//   margin: auto;
+// }
+
+.header {
   display: flex;
   flex-direction: row;
   width: 80%;
   margin-left: 10%;
   margin-top: 3%;
+  justify-content: space-between;
+
   #logo {
     width: 15%;
   }
@@ -25,12 +31,10 @@ $basic-font: "Montserrat", sans-serif;
       text-decoration: underline;
     }
   }
-  .group {
+  .nav {
     display: flex;
     flex-direction: row;
-    position: relative;
     align-items: center;
-    left: 70%;
   }
 }
 
@@ -93,6 +97,22 @@ $basic-font: "Montserrat", sans-serif;
     display: flex;
     border-radius: 10px;
 
+    .filter {
+      background: linear-gradient(
+        360deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(255, 255, 255, 0) 100%
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      z-index: 2;
+      position: absolute;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -107,11 +127,13 @@ $basic-font: "Montserrat", sans-serif;
       font-size: 18px;
       font-weight: 500;
       font-family: $basic-font;
+      z-index: 3;
     }
     img {
       object-fit: cover;
       overflow: hidden;
       border-radius: 10px;
+      z-index: 1;
     }
   }
 }
@@ -119,14 +141,11 @@ $basic-font: "Montserrat", sans-serif;
 //PAGE LOGEMENT
 
 .logement {
-  // border: #ff6060 solid 1px;
   width: 80%;
   margin-left: 10%;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  // justify-content: center;
-  // align-items: center;
 
   //PARTIE CARROUSEL
   .carrousel {
@@ -172,35 +191,38 @@ $basic-font: "Montserrat", sans-serif;
   //PARTIE DESCRIPTION
 
   .lgmt-description {
-    .title-host {
+    // .title-host {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-between;
+
+    .lgmt-title {
+      color: $primary-color;
+      font-family: $basic-font;
+      font-size: 36px;
+      font-weight: 500;
+    }
+
+    .lgmt-host {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      .lgmt-title {
-        color: $primary-color;
+      justify-content: end;
+      align-items: center;
+      max-width: 150px;
+      position: absolute;
+      right: 10%;
+      bottom: 25%;
+      .host-name {
         font-family: $basic-font;
-        font-size: 36px;
+        font-size: 18px;
+        color: $primary-color;
         font-weight: 500;
+        flex-wrap: wrap;
       }
-
-      .lgmt-host {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        max-width: 150px;
-        .host-name {
-          font-family: $basic-font;
-          font-size: 18px;
-          color: $primary-color;
-          font-weight: 500;
-          flex-wrap: wrap;
-        }
-        .host-pic {
-          width: 50%;
-          border-radius: 50%;
-        }
+      .host-pic {
+        width: 50%;
+        border-radius: 50%;
       }
+      // }
     }
 
     .lgmt-location {
@@ -248,6 +270,7 @@ $basic-font: "Montserrat", sans-serif;
 
     .lgmt-collapsers {
       display: flex;
+      gap: 15px;
 
       .lgmt-collapser {
         width: 100%;
@@ -264,9 +287,6 @@ $basic-font: "Montserrat", sans-serif;
 //COMPOSANT COLLAPSER
 
 .collapser {
-  // width: 50%;
-  // margin-left: 25%;
-
   .collaps-button {
     background-color: $primary-color;
     display: flex;
@@ -300,6 +320,17 @@ $basic-font: "Montserrat", sans-serif;
     font-size: 24px;
     font-weight: 400;
     padding: 10px;
+  }
+}
+
+//PAGE ABOUT
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  .collapser {
+    width: 50%;
+    margin-left: 25%;
   }
 }
 
@@ -357,5 +388,242 @@ $basic-font: "Montserrat", sans-serif;
   }
 }
 
-@media (max-width: 650px) {
+//MOBILE VERSION
+
+@media (max-width: 750px) {
+  .header {
+    width: 100%;
+    margin-left: 5px;
+    #logo {
+      width: 40%;
+    }
+    .link {
+      font-size: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .banner {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .filter {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .home-page {
+    .banner {
+      height: 111px;
+      .filter {
+        font-size: 24px;
+        height: 111px;
+      }
+    }
+
+    .gallery {
+      display: flex;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+      padding-top: 10px;
+      background-color: white;
+      height: fit-content;
+
+      .inner-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 0px;
+      }
+
+      .card {
+        width: 350px;
+        height: 255px;
+        position: relative;
+        margin: 10px;
+        display: flex;
+        border-radius: 10px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .card-title {
+          display: flex;
+          flex-wrap: wrap;
+          position: absolute;
+          bottom: 0%;
+          left: 5%;
+          color: white;
+          font-size: 18px;
+          font-weight: 500;
+          font-family: $basic-font;
+        }
+        img {
+          object-fit: cover;
+          overflow: hidden;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .logement {
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 0;
+
+    .carrousel {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      .arrow {
+        width: 15px;
+      }
+
+      #prev {
+        top: 45%;
+        left: 2%;
+      }
+
+      #next {
+        top: 45%;
+        right: 2%;
+      }
+      #num {
+        display: none;
+      }
+    }
+
+    .lgmt-description {
+      .lgmt-title {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+
+      .lgmt-host {
+        max-width: 100px;
+        position: relative;
+        top: 80px;
+        left: 70%;
+
+        .host-name {
+          padding: 0;
+          font-size: 12px;
+          flex-wrap: wrap;
+          margin-right: 0px;
+        }
+        .host-pic {
+          width: 40%;
+        }
+      }
+
+      .lgmt-location {
+        font-size: 14px;
+        position: relative;
+      }
+
+      .tags-stars {
+        display: block;
+        .lgmt-tags {
+          align-items: center;
+          margin-top: 20px;
+          margin-left: 0;
+          width: 100%;
+          .tag {
+            font-size: 10px;
+            margin: 0px;
+            margin-right: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 5px;
+          }
+        }
+
+        .lgmt-rating {
+          margin-top: 15px;
+          .star {
+            width: 15px;
+          }
+        }
+      }
+
+      .lgmt-collapsers {
+        flex-direction: column;
+        gap: 0px;
+      }
+
+      .equipment {
+        margin: 2px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .about-page {
+    align-items: center;
+    .collapser {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  .collapser {
+    .collaps-button {
+      height: 30px;
+      margin-top: 20px;
+
+      .title {
+        font-size: 13px;
+      }
+      .arrow {
+        width: 16px;
+      }
+    }
+    .text {
+      font-size: 12px;
+    }
+  }
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .number {
+      font-size: 96px;
+      margin: 70px;
+    }
+    .text {
+      width: 60%;
+      font-size: 18px;
+    }
+    .error-link {
+      font-size: 14px;
+      margin: 70px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    #logo {
+      margin-bottom: 5px;
+    }
+    .rights {
+      font-size: 15px;
+    }
+  }
 }

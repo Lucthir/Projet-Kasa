@@ -4,7 +4,7 @@ import background_home from "./../../assets/background_home.png";
 
 function Home({ selectedId, setSelectedId }) {
   return (
-    <div>
+    <div className="home-page">
       <Banner
         bannerText="Chez vous, partout et ailleurs"
         background={background_home}

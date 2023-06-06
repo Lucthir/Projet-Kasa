@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div>
+    <div className="header">
+      <img src={logo} alt="logo kasa" id="logo"></img>
       <div className="nav">
-        <img src={logo} alt="logo kasa" id="logo"></img>
-        <div className="group">
-          <Link to="/" className="link">
-            Accueil
-          </Link>
-          <Link to="/about" className="link">
-            A Propos
-          </Link>
-        </div>
+        <Link to="/" className="link">
+          Accueil
+        </Link>
+        <Link to="/about" className="link">
+          A Propos
+        </Link>
       </div>
     </div>
   );

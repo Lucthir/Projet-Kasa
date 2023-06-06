@@ -20,6 +20,7 @@ function Card({ id, title, cover, selectedId, setSelectedId }) {
       }}
     >
       <img src={cover} className="picture" alt={`${title} cover`}></img>
+      <div className="filter"></div>
       <h3 className="card-title">{title}</h3>
     </div>
   );

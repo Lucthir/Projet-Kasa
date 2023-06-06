@@ -20,19 +20,30 @@ function Carrousel({ pictures, id }) {
 
   return (
     <div className="carrousel">
-      <button onClick={() => prevImage()} className="carrousel-nav" id="prev">
-        <img src={arrow_left} className="arrow" alt="previous button" />
-      </button>
-      <button onClick={() => nextImage()} className="carrousel-nav" id="next">
-        <img src={arrow_right} alt="next button" />
-      </button>
-      <p id="num">
-        {index + 1}/{length}
-      </p>
+      {length !== 1 ? (
+        <div>
+          <button
+            onClick={() => prevImage()}
+            className="carrousel-nav"
+            id="prev"
+          >
+            <img src={arrow_left} className="arrow" alt="previous button" />
+          </button>
+          <button
+            onClick={() => nextImage()}
+            className="carrousel-nav"
+            id="next"
+          >
+            <img src={arrow_right} className="arrow" alt="next button" />
+          </button>
+          <p id="num">
+            {index + 1}/{length}
+          </p>
+        </div>
+      ) : null}
 
       {pictures.map((picture, picindex) => {
         return (
-          // <div className="carrouselpic" >
           picindex === index && (
             <img
               className="carrouselpic"
@@ -41,7 +52,6 @@ function Carrousel({ pictures, id }) {
               key={`${id}  ${picindex}`}
             />
           )
-          // </div>
         );
       })}
     </div>
