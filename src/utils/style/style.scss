@@ -191,11 +191,6 @@ $basic-font: "Montserrat", sans-serif;
   //PARTIE DESCRIPTION
 
   .lgmt-description {
-    // .title-host {
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-between;
-
     .lgmt-title {
       color: $primary-color;
       font-family: $basic-font;
@@ -222,7 +217,6 @@ $basic-font: "Montserrat", sans-serif;
         width: 50%;
         border-radius: 50%;
       }
-      // }
     }
 
     .lgmt-location {
@@ -309,7 +303,8 @@ $basic-font: "Montserrat", sans-serif;
       border: none;
       background-color: $primary-color;
       margin-right: 15px;
-      // transform: rotate(45deg);
+      transition: transform 1s;
+      transform: rotate(180deg);
     }
   }
 
@@ -320,6 +315,7 @@ $basic-font: "Montserrat", sans-serif;
     font-size: 24px;
     font-weight: 400;
     padding: 10px;
+    height: fit-content;
   }
 }
 

@@ -4,11 +4,14 @@ function Card({ id, title, cover, selectedId, setSelectedId }) {
   const navigate = useNavigate();
 
   function handleClick() {
+    localStorage.getItem(`path${id}`);
+
     generatePath("/logement/:id/", {
       id: { id },
     });
-    sessionStorage.setItem(`path${id}`, `/logement/${id}`);
+    localStorage.setItem(`path${id}`, `/logement/${id}`);
     setSelectedId(id);
+    navigate(`/logement/${id}`);
   }
 
   return (
@@ -16,7 +19,6 @@ function Card({ id, title, cover, selectedId, setSelectedId }) {
       className="card"
       onClick={() => {
         handleClick();
-        navigate(`/logement/${id}`);
       }}
     >
       <img src={cover} className="picture" alt={`${title} cover`}></img>
@@ -27,8 +29,3 @@ function Card({ id, title, cover, selectedId, setSelectedId }) {
 }
 
 export default Card;
-
-// onClick={() => {
-//   setIsLogement(true);
-//   setSelectedLogement(id);
-// }}

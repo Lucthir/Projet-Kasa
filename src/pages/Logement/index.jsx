@@ -1,7 +1,9 @@
-import Collapse from "./../../components/Collapse";
-import Carrousel from "./../../components/Carrousel";
+import Collapse from "../../components/Collapse";
+import Carrousel from "../../components/Carrousel";
 import grey_star from "./../../assets/grey_star.svg";
 import red_star from "./../../assets/red_star.svg";
+import { generatePath, useNavigate } from "react-router-dom";
+import useEffect from "react";
 
 function Logement({
   id,
@@ -20,11 +22,21 @@ function Logement({
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
         stars.push(
-          <img src={red_star} alt="rating stars" className="star"></img>
+          <img
+            src={red_star}
+            alt="rating stars"
+            className="star"
+            key={`rating red star ${i}`}
+          ></img>
         );
       } else {
         stars.push(
-          <img src={grey_star} alt="rating stars" className="star"></img>
+          <img
+            src={grey_star}
+            alt="rating stars"
+            className="star"
+            key={`rating grey star ${i}`}
+          ></img>
         );
       }
     }
