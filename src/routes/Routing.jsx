@@ -11,15 +11,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 function Routing() {
-  const [selectedId, setSelectedId] = useState();
+  const [selectedId, setSelectedId] = useState(
+    sessionStorage.getItem("current")
+  );
   let locationList = require("./../datas/data.json");
 
   let selectedLogement = locationList.filter(
     (location) => location.id === selectedId
   );
-  //   console.log(selectedLogement);
+  // console.log(selectedLogement);
+  // console.log(selectedId);
 
-  //   console.log(selectedId);
+  sessionStorage.setItem("current", `${selectedId}`);
 
   return (
     <React.StrictMode>
@@ -33,6 +36,7 @@ function Routing() {
             }
           />
           <Route path="/about" element={<About />} />
+
           <Route
             path={`/logement/${selectedId}`}
             element={selectedLogement.map(

@@ -2,8 +2,6 @@ import Collapse from "../../components/Collapse";
 import Carrousel from "../../components/Carrousel";
 import grey_star from "./../../assets/grey_star.svg";
 import red_star from "./../../assets/red_star.svg";
-import { generatePath, useNavigate } from "react-router-dom";
-import useEffect from "react";
 
 function Logement({
   id,
@@ -49,13 +47,11 @@ function Logement({
         <Carrousel pictures={pictures} id={id} />
       </div>
       <div className="lgmt-description">
-        {/* <div className="title-host"> */}
         <h3 className="lgmt-title">{title}</h3>
         <div className="lgmt-host">
           <span className="host-name">{host.name}</span>
           <img src={host.picture} alt="host-pic" className="host-pic"></img>
         </div>
-        {/* </div> */}
         <div className="lgmt-location">{location}</div>
         <div className="tags-stars">
           <div className="lgmt-tags">
@@ -76,7 +72,7 @@ function Logement({
           <div className="lgmt-collapser">
             <Collapse title="Description" text={description} />
           </div>
-          <div className="lgmt-collapser">
+          <div className="lgmt-collapser" id="equipment-collapser">
             <Collapse
               title="Equipements"
               text={equipments.map((content, index) => {

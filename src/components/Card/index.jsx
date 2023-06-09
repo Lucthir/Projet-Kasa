@@ -4,12 +4,9 @@ function Card({ id, title, cover, selectedId, setSelectedId }) {
   const navigate = useNavigate();
 
   function handleClick() {
-    localStorage.getItem(`path${id}`);
-
     generatePath("/logement/:id/", {
       id: { id },
     });
-    localStorage.setItem(`path${id}`, `/logement/${id}`);
     setSelectedId(id);
     navigate(`/logement/${id}`);
   }

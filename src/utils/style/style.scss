@@ -181,7 +181,10 @@ $basic-font: "Montserrat", sans-serif;
     }
     #num {
       position: absolute;
-      bottom: 5%;
+      font-family: $basic-font;
+      font-size: 18px;
+      font-weight: 500;
+      bottom: 2%;
       left: 50%;
       color: white;
       z-index: 2;
@@ -269,6 +272,10 @@ $basic-font: "Montserrat", sans-serif;
       .lgmt-collapser {
         width: 100%;
       }
+
+      #equipment-collapser {
+        padding-bottom: 50px;
+      }
     }
 
     .equipment {
@@ -303,7 +310,9 @@ $basic-font: "Montserrat", sans-serif;
       border: none;
       background-color: $primary-color;
       margin-right: 15px;
-      transition: transform 1s;
+      transition: all 0.3s linear;
+    }
+    .arrow.up {
       transform: rotate(180deg);
     }
   }
@@ -314,8 +323,22 @@ $basic-font: "Montserrat", sans-serif;
     font-family: $basic-font;
     font-size: 24px;
     font-weight: 400;
-    padding: 10px;
-    height: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  .text.true {
+    // height: 200px;
+    padding-top: 10px;
+    transition: height 0.3s ease-in-out, padding-top 0.3s ease-out;
+  }
+
+  .text.false {
+    //   height: 0px;
+    padding-top: 0px;
+    transition: height 0.3s ease-in-out, padding-top 0.3s ease-out;
   }
 }
 
