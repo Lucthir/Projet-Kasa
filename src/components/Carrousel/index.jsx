@@ -3,8 +3,6 @@ import arrow_left from "./../../assets/arrow_left.svg";
 import arrow_right from "./../../assets/arrow_right.svg";
 
 function Carrousel({ pictures, id }) {
-  //   console.log(pictures);
-
   const [index, setIndex] = useState(0);
   const length = pictures.length;
 

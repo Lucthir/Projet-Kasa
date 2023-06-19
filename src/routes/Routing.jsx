@@ -19,8 +19,6 @@ function Routing() {
   let selectedLogement = locationList.filter(
     (location) => location.id === selectedId
   );
-  // console.log(selectedLogement);
-  // console.log(selectedId);
 
   sessionStorage.setItem("current", `${selectedId}`);
 
@@ -77,31 +75,3 @@ function Routing() {
 }
 
 export default Routing;
-// selectedLogement.map(
-//               ({
-//                 id,
-//                 title,
-//                 cover,
-//                 pictures,
-//                 description,
-//                 host,
-//                 rating,
-//                 location,
-//                 equipments,
-//                 tags,
-//               }) => (
-//                 <Logement
-//                   id={id}
-//                   title={title}
-//                   cover={cover}
-//                   pictures={pictures}
-//                   description={description}
-//                   host={host}
-//                   rating={rating}
-//                   location={location}
-//                   equipments={equipments}
-//                   tags={tags}
-//                   key={`${id} + location`}
-//                 />
-//               )
-//             )

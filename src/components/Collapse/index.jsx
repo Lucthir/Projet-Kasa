@@ -44,38 +44,3 @@ function Collapse({ title, text }) {
 }
 
 export default Collapse;
-
-// return isOpen ? (
-//   <div className="collapser">
-//     <button
-//       className="collaps-button"
-//       onClick={() => {
-//         setIsOpen(false);
-//       }}
-//     >
-//       <h3 className="title">{title}</h3>
-//       <img
-//         src={arrow_down}
-//         alt="bouton fermer"
-//         className={`arrow ${isOpen}`}
-//       />
-//     </button>
-
-//     <div className="text">{text}</div>
-//   </div>
-// ) : (
-//   <div className="collapser">
-//     <button
-//       className="collaps-button"
-//       onClick={() => {
-//         setIsOpen(true);
-//       }}
-//     >
-//       <h3 className="title">{title}</h3>
-//       <img src={arrow_up} alt="bouton ouvrir" className={`arrow ${isOpen}`} />
-//     </button>
-//     <div className="text" style={{ display: "none" }}>
-//       {text}
-//     </div>
-//   </div>
-// );
