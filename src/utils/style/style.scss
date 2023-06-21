@@ -194,6 +194,7 @@ $basic-font: "Montserrat", sans-serif;
       font-family: $basic-font;
       font-size: 36px;
       font-weight: 500;
+      margin-bottom: -40px;
     }
 
     .lgmt-host {
@@ -201,8 +202,9 @@ $basic-font: "Montserrat", sans-serif;
       justify-content: end;
       align-items: center;
       max-width: 150px;
-      position: absolute;
-      right: 10%;
+      position: relative;
+      left: 90%;
+
       bottom: 25%;
       .host-name {
         font-family: $basic-font;
