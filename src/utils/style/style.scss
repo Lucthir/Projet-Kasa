@@ -76,20 +76,20 @@ $basic-font: "Montserrat", sans-serif;
   border-radius: 25px;
 
   .inner-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     height: 100%;
-    gap: 50px;
+    column-gap: 3%;
+    row-gap: 30px;
+    justify-items: center;
+    margin-bottom: 25px;
   }
 
   .card {
     width: 340px;
     height: 340px;
     position: relative;
-    margin: 35px;
     display: flex;
     border-radius: 10px;
 
@@ -142,6 +142,7 @@ $basic-font: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  // border: solid 2px green;
 
   //PARTIE CARROUSEL
   .carrousel {
@@ -190,95 +191,111 @@ $basic-font: "Montserrat", sans-serif;
   //PARTIE DESCRIPTION
 
   .lgmt-description {
-    .lgmt-title {
-      color: $primary-color;
-      font-family: $basic-font;
-      font-size: 36px;
-      font-weight: 500;
-      margin-bottom: -40px;
-    }
-
-    .lgmt-host {
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      max-width: 150px;
+    .top-part {
+      // border: #ff6060 solid 2px;
       position: relative;
-      left: 90%;
+      height: 230px;
+      .top-left-part {
+        position: absolute;
+        width: 80%;
+        height: 100%;
 
-      bottom: 25%;
-      .host-name {
-        font-family: $basic-font;
-        font-size: 18px;
-        color: $primary-color;
-        font-weight: 500;
-        flex-wrap: wrap;
-      }
-      .host-pic {
-        width: 50%;
-        border-radius: 50%;
-      }
-    }
-
-    .lgmt-location {
-      color: $primary-color;
-      font-family: $basic-font;
-      font-size: 18px;
-      font-weight: 500;
-      position: relative;
-      bottom: 30px;
-    }
-
-    .tags-stars {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: -30px;
-
-      .lgmt-tags {
-        display: flex;
-        flex-direction: row;
-        margin-top: 10px;
-        margin-left: -15px;
-        .tag {
-          color: white;
-          background-color: $primary-color;
+        .lgmt-title {
+          color: $primary-color;
           font-family: $basic-font;
-          font-size: 14px;
+          font-size: 36px;
           font-weight: 500;
-          width: fit-content;
-          margin: 10px;
-          padding: 3px;
-          padding-left: 25px;
-          padding-right: 25px;
-          border-radius: 10px;
+          margin-bottom: -40px;
+          position: relative;
+          left: 10px;
+          width: 100%;
+        }
+        .lgmt-location {
+          color: $primary-color;
+          font-family: $basic-font;
+          font-size: 18px;
+          font-weight: 500;
+          position: relative;
+          top: 20%;
+          left: 10px;
+          margin-top: 15px;
+        }
+
+        .lgmt-tags {
+          display: flex;
+          flex-direction: row;
+          margin-left: -15px;
+          position: relative;
+          top: 30%;
+          left: 10px;
+          .tag {
+            color: white;
+            background-color: $primary-color;
+            font-family: $basic-font;
+            font-size: 14px;
+            font-weight: 500;
+            width: fit-content;
+            margin: 10px;
+            padding: 3px;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 10px;
+          }
+        }
+      }
+      .lgmt-host {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        max-width: 150px;
+        position: absolute;
+        right: 10px;
+
+        top: 15%;
+        .host-name {
+          font-family: $basic-font;
+          font-size: 18px;
+          color: $primary-color;
+          font-weight: 500;
+          flex-wrap: wrap;
+          padding: 15px;
+        }
+        .host-pic {
+          width: 50%;
+          border-radius: 50%;
         }
       }
 
       .lgmt-rating {
         display: flex;
+        position: absolute;
+        top: 120px;
+        right: 15px;
         .star {
           margin: 5px;
         }
       }
     }
 
-    .lgmt-collapsers {
-      display: flex;
-      gap: 15px;
+    .bottom-part {
+      // border: #000000 solid 2px;
+      .lgmt-collapsers {
+        display: flex;
+        gap: 15px;
 
-      .lgmt-collapser {
-        width: 100%;
+        .lgmt-collapser {
+          width: 100%;
+        }
+
+        #equipment-collapser {
+          padding-bottom: 50px;
+        }
       }
 
-      #equipment-collapser {
-        padding-bottom: 50px;
+      .equipment {
+        list-style-type: none;
+        margin: 10px;
       }
-    }
-
-    .equipment {
-      list-style-type: none;
-      margin: 10px;
     }
   }
 }
@@ -405,7 +422,33 @@ $basic-font: "Montserrat", sans-serif;
 
 //MOBILE VERSION
 
-@media (max-width: 750px) {
+@media (max-width: 1350px) and (min-width: 1100px) {
+  .home-page {
+    .gallery {
+      .inner-gallery {
+        .card {
+          width: 280px;
+          height: 280px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 850px) {
+  .home-page {
+    .gallery {
+      .inner-gallery {
+        .card {
+          width: 230px;
+          height: 230px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
   .header {
     width: 100%;
     margin-left: 5px;
@@ -449,20 +492,16 @@ $basic-font: "Montserrat", sans-serif;
       height: fit-content;
 
       .inner-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 25px;
+        margin-top: 25px;
       }
 
       .card {
         width: 350px;
         height: 255px;
         position: relative;
-        margin: 10px;
+        margin: 0px;
         display: flex;
         border-radius: 10px;
 
@@ -518,66 +557,76 @@ $basic-font: "Montserrat", sans-serif;
     }
 
     .lgmt-description {
-      .lgmt-title {
-        font-size: 18px;
-        margin-bottom: 0;
-      }
-
-      .lgmt-host {
-        max-width: 100px;
+      .top-part {
         position: relative;
-        top: 80px;
-        left: 70%;
+        height: 150px;
+        .top-left-part {
+          width: 90%;
+          .lgmt-title {
+            font-size: 18px;
+            margin-bottom: 0px;
+          }
+          .lgmt-location {
+            font-size: 14px;
+            top: 0px;
+            margin-top: 7px;
+          }
 
-        .host-name {
-          padding: 0;
-          font-size: 12px;
-          flex-wrap: wrap;
-          margin-right: 0px;
+          .lgmt-tags {
+            align-items: center;
+            margin-left: 0;
+            margin-top: 10px;
+            width: 100%;
+            top: 0%;
+            .tag {
+              font-size: 9px;
+              margin: 0px;
+              margin-right: 5px;
+              padding-left: 15px;
+              padding-right: 15px;
+              border-radius: 5px;
+            }
+          }
         }
-        .host-pic {
-          width: 40%;
-        }
-      }
+        .lgmt-host {
+          max-width: 100px;
+          position: absolute;
+          top: 80%;
+          right: 7%;
 
-      .lgmt-location {
-        font-size: 14px;
-        position: relative;
-      }
-
-      .tags-stars {
-        display: block;
-        .lgmt-tags {
-          align-items: center;
-          margin-top: 20px;
-          margin-left: 0;
-          width: 100%;
-          .tag {
-            font-size: 10px;
-            margin: 0px;
-            margin-right: 5px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border-radius: 5px;
+          .host-name {
+            padding: 0;
+            font-size: 12px;
+            flex-wrap: wrap;
+            margin-right: 0px;
+          }
+          .host-pic {
+            width: 40%;
           }
         }
 
         .lgmt-rating {
-          margin-top: 15px;
+          display: flex;
+          position: absolute;
+          top: 80%;
+          left: 15px;
+
           .star {
-            width: 15px;
+            margin: 5px;
+            width: 20px;
           }
         }
       }
+      .bottom-part {
+        .lgmt-collapsers {
+          flex-direction: column;
+          gap: 0px;
+        }
 
-      .lgmt-collapsers {
-        flex-direction: column;
-        gap: 0px;
-      }
-
-      .equipment {
-        margin: 2px;
-        padding-left: 0;
+        .equipment {
+          margin: 2px;
+          padding-left: 0;
+        }
       }
     }
   }

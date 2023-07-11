@@ -47,42 +47,47 @@ function Logement({
         <Carrousel pictures={pictures} id={id} />
       </div>
       <div className="lgmt-description">
-        <h3 className="lgmt-title">{title}</h3>
-        <div className="lgmt-host">
-          <span className="host-name">{host.name}</span>
-          <img src={host.picture} alt="host-pic" className="host-pic"></img>
-        </div>
-        <div className="lgmt-location">{location}</div>
-        <div className="tags-stars">
-          <div className="lgmt-tags">
-            {tags.map((content, index) => {
-              return (
-                <p className="tag" key={`tag ${index}`}>
-                  {content}
-                </p>
-              );
-            })}
-          </div>
+        <div className="top-part">
+          <div className="top-left-part">
+            <h3 className="lgmt-title">{title}</h3>
 
+            <div className="lgmt-location">{location}</div>
+
+            <div className="lgmt-tags">
+              {tags.map((content, index) => {
+                return (
+                  <p className="tag" key={`tag ${index}`}>
+                    {content}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+          <div className="lgmt-host">
+            <span className="host-name">{host.name}</span>
+            <img src={host.picture} alt="host-pic" className="host-pic"></img>
+          </div>
           <div className="lgmt-rating">
             <Stars />
           </div>
         </div>
-        <div className="lgmt-collapsers">
-          <div className="lgmt-collapser">
-            <Collapse title="Description" text={description} />
-          </div>
-          <div className="lgmt-collapser" id="equipment-collapser">
-            <Collapse
-              title="Equipements"
-              text={equipments.map((content, index) => {
-                return (
-                  <ul className="equipment" key={`equipment ${index}`}>
-                    {content}
-                  </ul>
-                );
-              })}
-            />
+        <div className="bottom-part">
+          <div className="lgmt-collapsers">
+            <div className="lgmt-collapser">
+              <Collapse title="Description" text={description} />
+            </div>
+            <div className="lgmt-collapser" id="equipment-collapser">
+              <Collapse
+                title="Equipements"
+                text={equipments.map((content, index) => {
+                  return (
+                    <ul className="equipment" key={`equipment ${index}`}>
+                      {content}
+                    </ul>
+                  );
+                })}
+              />
+            </div>
           </div>
         </div>
       </div>
